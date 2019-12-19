@@ -7,9 +7,10 @@ import Container from "../components/Container";
 const Characters = () => {
   const dispatch = useDispatch();
   const characters = useSelector(state => state.characters.items);
+  const page = useSelector(state => state.characters.page);
 
   useEffect(() => {
-    dispatch(getCharacters(1));
+    dispatch(getCharacters(page));
   }, [dispatch]);
 
   return (
