@@ -3,6 +3,7 @@ import axios from "axios";
 
 export const getCharacters = page => dispatch => {
   axios.get(`character/?page=${page}`).then(res => {
-    dispatch({ type: GET_CHARACTERS, payload: res.data.results });
+    const payload = res.data.results ;
+    dispatch({ type: GET_CHARACTERS, payload });
   });
 };

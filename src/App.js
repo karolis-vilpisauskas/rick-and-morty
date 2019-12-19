@@ -1,15 +1,8 @@
 import React from "react";
-import Logo from "./components/Logo";
+import Characters from "./views/Characters";
 
 function App() {
-  return (
-    <div className="flex flex-col w-full h-screen px-4 items-center justify-center">
-      <Logo />
-      <h1 className="text-4xl text-center">
-        React Boilerplate with Tailwind.css and Redux
-      </h1>
-    </div>
-  );
+  return <Characters />;
 }
 
 export default App;
