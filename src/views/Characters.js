@@ -1,8 +1,8 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getCharacters } from "../store/actions/characterActions";
+import React, { useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import Container from "../components/Container";
+import { getCharacters } from "../store/actions/characterActions";
 
 const Characters = () => {
   const dispatch = useDispatch();
@@ -14,10 +14,13 @@ const Characters = () => {
   }, [dispatch]);
 
   return (
-    <Container>
+    <Container margin="auto" padding="6">
       <div>
         {characters.map(character => (
-          <p>{character.name}</p>
+          <div>
+            <img src={character.image} alt={`image_${character.id}`} />
+            <p>{character.name}</p>
+          </div>
         ))}
       </div>
     </Container>
